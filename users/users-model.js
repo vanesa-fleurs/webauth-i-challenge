@@ -4,6 +4,8 @@ module.exports = {
     get,
     getById,
     add,
+    findBy,
+    find
 }
 
 function get(){
@@ -19,3 +21,11 @@ function add(user){
     .insert(user, 'id')
     .then(([id]) => getById(id))
 }
+
+function findBy(filter) {
+    return db('users').where(filter).first()
+}
+
+function find() {
+    return db('users').select('id', 'username', 'password');
+  }

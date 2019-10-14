@@ -9,7 +9,7 @@ server.use(helmet())
 
 
 const userRouter = require('./users/users-router.js')
-server.use('/api/users', userRouter);
+server.use('/api', userRouter);
 
 server.get('/', (req,res) => {
     res.send(`
