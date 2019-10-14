@@ -1,11 +1,12 @@
 const express = require('express');
 const helmet = require('helmet')
-const bcrypt = require('bcryptjs')
+
 
 const server = express();
 
 server.use(express.json())
 server.use(helmet())
+
 
 const userRouter = require('./users/users-router.js')
 server.use('/api/users', userRouter);
